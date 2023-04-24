@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>My planner</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <form id="signup-form" class="form center">
+      <h2>Регистрация</h2>
+      <p>
+        <label for="email">Почта</label>
+        <input type="email" id="email" />
+      </p>
+      <p>
+        <label for="password">Пароль</label>
+        <input type="password" id="password" />
+      </p>
+      <p style="text-align: center">
+        Уже есть аккаунт?
+        <br />
+        Перейти на страницу <a href="./login.html">входа</a>
+      </p>
+      <button type="submit" id="login">Зарегистрироваться</button>
+    </form>
+
+    <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-auth-compat.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyAn8Gv26iUgfGyNv6rGKTwKzp8XkhiFSHA",
+        authDomain: "my-planner-ec466.firebaseapp.com",
+        projectId: "my-planner-ec466",
+        storageBucket: "my-planner-ec466.appspot.com",
+        messagingSenderId: "968362003184",
+        appId: "1:968362003184:web:1a5d75c4cc206b41999035",
+        measurementId: "G-EQD1C8QVWP",
+      };
+      firebase.initializeApp(firebaseConfig);
+
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+    </script>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

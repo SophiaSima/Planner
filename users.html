@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/08958affb8.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="sign-out">
+      <button class="sign-out-button hover_button" onclick="logout()">
+        Выход
+      </button>
+    </div>
+    <div class="container">
+      <form id="form" class="todo-form">
+        <div>
+          <label for="todos"></label>
+          <input type="text" id="todos" required />
+        </div>
+      </form>
+      <div id="todo-container"></div>
+      <div class="buttons">
+        <button
+          id="all"
+          onclick="filterHandler('all')"
+          class="button button1 hover_button"
+        >
+          Все
+        </button>
+        <button
+          id="open"
+          onclick="filterHandler('open')"
+          class="button button2 hover_button"
+        >
+          Активные
+        </button>
+        <button
+          id="finished"
+          onclick="filterHandler('completed')"
+          class="button button3 hover_button"
+        >
+          Завершенные
+        </button>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-auth-compat.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyAn8Gv26iUgfGyNv6rGKTwKzp8XkhiFSHA",
+        authDomain: "my-planner-ec466.firebaseapp.com",
+        projectId: "my-planner-ec466",
+        storageBucket: "my-planner-ec466.appspot.com",
+        messagingSenderId: "968362003184",
+        appId: "1:968362003184:web:1a5d75c4cc206b41999035",
+        measurementId: "G-EQD1C8QVWP",
+      };
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+    </script>
+
+    <script src="js/users.js"></script>
+  </body>
+</html>
